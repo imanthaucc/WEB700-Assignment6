@@ -1,0 +1,7 @@
+# Do not expose your Neon credentials to the browser
+
+PGHOST='ep-patient-sky-a513t755.us-east-2.aws.neon.tech'
+PGDATABASE='ImanthaDB'
+PGUSER='ImanthaDB_owner'
+PGPASSWORD='ChzQK90uIOos'
+ENDPOINT_ID='ep-patient-sky-a513t755'

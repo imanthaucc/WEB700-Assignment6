@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <h2>Courses</h2>
+        <a href="/courses/add" class="btn btn-success float-end">Add New Course</a>
+        <hr />
+
+        <!-- Conditionally display the message if no courses are available -->
+        {{#unless courses}}
+            <div class="col-md-12 text-center">
+                <strong>{{message}}</strong>
+            </div>
+        {{else}}
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Description</th>
+                            <th></th> <!-- New header for the remove button -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each courses}}
+                            <tr>
+                                <td><a href="/course/{{courseCode}}">{{courseCode}}</a></td>
+                                <td><a href="/students?course={{courseCode}}">{{courseDescription}}</a></td>
+                                <td>
+                                    <a href="/course/delete/{{courseCode}}" class="btn btn-danger">Remove</a> <!-- Remove button -->
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        {{/unless}}
+    </div>
+</div>
